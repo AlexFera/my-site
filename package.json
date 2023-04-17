@@ -4,7 +4,7 @@
   "description": "My personal website",
   "main": "sass/my-styles.scss",
   "scripts": {
-    "css-build": "node-sass --omit-source-map-url sass/my-styles.scss css/my-styles.css",
+    "css-build": "node-sass --omit-source-map-url sass/my-styles.scss dist/my-styles.css",
     "css-watch": "npm run css-build -- --watch",
     "start": "npm run css-watch"
   },
