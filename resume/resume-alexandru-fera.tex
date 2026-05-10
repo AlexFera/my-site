@@ -1,0 +1,278 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage[scale=0.90,lf]{FiraMono}
+
+\definecolor{light-grey}{gray}{0.83}
+\definecolor{dark-grey}{gray}{0.3}
+\definecolor{text-grey}{gray}{.08}
+
+\DeclareRobustCommand{\ebseries}{\fontseries{eb}\selectfont}
+\DeclareTextFontCommand{\texteb}{\ebseries}
+
+\usepackage{contour}
+\usepackage[normalem]{ulem}
+\renewcommand{\ULdepth}{1.8pt}
+\contourlength{0.8pt}
+\newcommand{\myuline}[1]{%
+  \uline{\phantom{#1}}%
+  \llap{\contour{white}{#1}}%
+}
+
+\usepackage{tgheros}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage[T1]{fontenc}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\setlength{\footskip}{4.08003pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{0in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat {\section}{
+    \bfseries \vspace{2pt} \raggedright \large
+}{}{0em}{}[\color{light-grey} {\titlerule[2pt]} \vspace{-4pt}]
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-1pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & {\color{dark-grey}\small #2}\vspace{1pt}\\
+      \textit{#3} & {\color{dark-grey} \small #4}\\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumePlainHeading}[2]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & {\color{dark-grey}\small #2}\vspace{1pt}
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{0pt}}
+
+\color{text-grey}
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge Alexandru Fera} \\ \vspace{5pt}
+    \textbf{Senior Software Engineer} \\ \vspace{5pt}
+    Bucharest, Romania \hspace{1pt} $|$
+    \href{https://www.linkedin.com/in/alexandru-fera/}{linkedin.com/in/alexandru-fera} \hspace{1pt} $|$
+    \href{https://alexandrufera.com}{alexandrufera.com} \hspace{1pt} $|$
+    \href{mailto:alexandrufera@gmail.com}{alexandrufera@gmail.com}
+    \\ \vspace{-3pt}
+\end{center}
+
+\section{PROFILE}
+\small{
+Senior Software Engineer with 13+ years of experience building back-end systems, distributed workflows, document-processing platforms and engineering tooling. Strong background in C\#/.NET, TypeScript, SQL databases, message-driven architectures, CI/CD, Kubernetes and automated testing.
+
+\vspace{4pt}
+Recent work spans product engineering at Adobe and independent consulting across enterprise environments, including systems where reliability, traceability, idempotent processing and operational visibility are essential. Comfortable working across architecture, implementation, deployment, diagnostics and collaboration with operations teams.
+
+\vspace{4pt}
+I prefer pragmatic engineering: explicit state, clear boundaries, reliable processing, useful tests, observable services and code that future teams can understand and operate.
+}
+
+\section{CORE EXPERTISE}
+\begin{itemize}[leftmargin=0in, label={}]
+\small{\item{
+\textbf{Back-end engineering:} C\#, .NET, ASP.NET Core, Web APIs, background services, worker services, Node.js, TypeScript \\
+\textbf{Distributed systems:} microservices, message-driven workflows, asynchronous processing, state machines, retries, duplicate detection, idempotency \\
+\textbf{Data and persistence:} SQL Server, PostgreSQL, Entity Framework Core, database design, migrations, query design \\
+\textbf{Messaging and integration:} Artemis / AMQP, Kafka, RabbitMQ, NServiceBus, external API integration, file and document ingestion workflows \\
+\textbf{Cloud, containers and delivery:} Docker, Kubernetes, Helm, Azure DevOps, EKS, CI/CD pipelines, GitVersion, SonarQube \\
+\textbf{Testing and quality:} Testcontainers, Playwright, integration tests, E2E tests, acceptance tests, static analysis, code-style enforcement \\
+\textbf{Observability and operations:} OpenTelemetry, logging, tracing, correlation IDs, health checks, production diagnostics \\
+\textbf{Browser and document tooling:} Puppeteer, Playwright, Chrome DevTools Protocol, headless Chrome, OOXML / PPTX processing, memory-leak investigation tooling
+}}
+\end{itemize}
+
+\section{REPRESENTATIVE ENGINEERING WORK}
+\resumeSubHeadingListStart
+  \resumePlainHeading{Product engineering and document-processing workflows -- Adobe}{}
+  \small{
+  Worked on back-end and platform engineering for presentation-import and document-processing workflows in Adobe Express, a large-scale product used by millions of customers. The work involved importing Microsoft PowerPoint presentations, a large TypeScript monorepo, Bazel, Node.js services, Kubernetes-based infrastructure, internal platform abstractions, browser automation and server-side processing of presentation documents.
+
+  \vspace{3pt}
+  Contributed to architecture, implementation and team delivery for workflows involving OOXML / PPTX processing, service-to-service coordination, headless Chrome automation and communication with a headless application runtime. The engineering work sits at the boundary between back-end services, document conversion, browser automation and product integration.
+
+  \vspace{3pt}
+  Worked with deployment and platform concerns around Kubernetes-based services, Helm-style configuration and CI/CD workflows, while collaborating with other engineers to make the import pipeline reliable, testable and maintainable.
+
+  \vspace{3pt}
+  Researched and built tooling around Playwright, Chrome DevTools Protocol and Memlab to make memory-leak investigation more repeatable. Automated heap snapshot collection and analysis through Playwright and CDP, persisted results in PostgreSQL, and built Vue-based dashboards to inspect leaks and retainer chains.
+
+  \vspace{3pt}
+  Used AI coding agents such as Claude Code and Codex CLI as part of the engineering workflow for exploration, refactoring and implementation support, while keeping design decisions, review and delivery under engineering control.
+  }
+
+  \resumePlainHeading{Confidential distributed ingestion platform}{}
+  \small{
+  Worked on distributed .NET microservices for asynchronous file and report ingestion in a restricted enterprise environment. The system persisted metadata in SQL Server, coordinated long-running processing through an enterprise message broker, integrated with downstream systems and was deployed on Kubernetes.
+
+  \vspace{3pt}
+  The work involved architecture, implementation, CI/CD, Helm charts, operational diagnostics and collaboration with operations teams. Key engineering concerns included reliable processing, idempotency, retries, duplicate detection, state transitions, traceability and making the system diagnosable when issues occurred.
+
+  \vspace{3pt}
+  Technologies included .NET 10, C\#, SQL Server, Artemis / AMQP messaging, Kubernetes, Helm, Azure DevOps, OpenTelemetry-style diagnostics, background services and worker services.
+  }
+
+  \resumePlainHeading{Streaming and delivery platform work -- RealPage}{}
+  \small{
+  Implemented Kafka-based data streaming to clients, improving the performance characteristics of an existing solution. Packaged producers and consumers for Kubernetes deployment on Amazon EKS and created Azure DevOps pipelines for build, packaging and release.
+
+  \vspace{3pt}
+  Added integration testing with Testcontainers and used static code analysis to catch issues at build time and maintain a consistent code style.
+  }
+
+  \resumePlainHeading{Web platforms and document management -- STIONA Software}{}
+  \small{
+  Led the design and implementation of multiple web applications using ASP.NET Core on the back end and Vue on the front end. Migrated several SPAs from Vue 2 and Webpack to Vue 3, TypeScript and Vite.
+
+  \vspace{3pt}
+  Designed and implemented a document management system from database schema to user interface, including file storage, back-end APIs and front-end workflows. Built API-level filtering, sorting and pagination using Dynamic LINQ and Entity Framework to generate database queries against PostgreSQL.
+
+  \vspace{3pt}
+  Added E2E testing with Playwright and contributed to maintainable application structure through clear separation of concerns and consistent engineering practices.
+  }
+\resumeSubHeadingListEnd
+
+\section{PROFESSIONAL EXPERIENCE}
+  \resumeSubHeadingListStart
+
+  \resumeSubheading
+      {Senior Software Engineer -- Adobe}{June 2024 -- Present}
+      {Remote}{Bucharest, Romania}
+      \resumeItemListStart
+        \resumeItem{Worked on TypeScript, Node.js and platform services in a large product-engineering environment using a Bazel-based monorepo.}
+        \resumeItem{Contributed to presentation-import and document-processing workflows for Adobe Express, a large-scale product used by millions of customers, including Microsoft PowerPoint / PPTX import.}
+        \resumeItem{Worked on back-end services involving OOXML processing, service coordination, browser automation and communication with a headless application runtime.}
+        \resumeItem{Used Puppeteer and headless Chrome as part of server-side document-processing workflows.}
+        \resumeItem{Worked with Kubernetes-based infrastructure, internal platform abstractions, Helm-style configuration and CI/CD workflows.}
+        \resumeItem{Researched memory-leak investigation workflows using Playwright, Chrome DevTools Protocol and Memlab.}
+        \resumeItem{Automated heap snapshot collection and analysis through Playwright tests and CDP.}
+        \resumeItem{Stored memory-analysis results in PostgreSQL and built Vue-based dashboards to inspect leaks and retainer chains.}
+        \resumeItem{Used AI coding agents such as Claude Code and Codex CLI for exploration, refactoring and implementation support.}
+        \resumeItem{Contributed to architecture, implementation and delivery across back-end services and platform workflows.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Senior .NET Developer -- RealPage}{June 2023 -- June 2024}
+      {Remote}{Bucharest, Romania}
+      \resumeItemListStart
+      \resumeItem{Implemented Kafka-based data streaming to clients, improving the performance characteristics of the existing solution.}
+      \resumeItem{Created Kubernetes deployment configuration for consumers and producers running on Amazon EKS.}
+      \resumeItem{Built multi-stage Azure DevOps pipelines for packaging and release.}
+      \resumeItem{Wrote integration tests using Testcontainers.}
+      \resumeItem{Applied static code analysis to catch issues during the build and maintain consistent code style.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Senior .NET Developer -- STIONA Software}{May 2019 -- June 2023}
+      {Remote}{Bucharest, Romania}
+      \resumeItemListStart
+       \resumeItem{Led software design and implementation for multiple web applications using ASP.NET Core and Vue.}
+       \resumeItem{Migrated SPAs from JavaScript, Vue 2 and Webpack to Vue 3, TypeScript and Vite.}
+       \resumeItem{Designed and implemented a document management system from database schema to UI.}
+       \resumeItem{Used Azure Blob Storage for file storage and ASP.NET Core APIs for application workflows.}
+       \resumeItem{Built reusable API support for filtering, sorting and pagination using Dynamic LINQ and Entity Framework.}
+       \resumeItem{Wrote E2E tests in TypeScript using Playwright.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Senior .NET Developer -- Equiniti}{November 2017 -- May 2019}
+      {Remote}{Bucharest, Romania}
+      \resumeItemListStart
+        \resumeItem{Designed and implemented front-end functionality for a finance platform using Kendo UI and ASP.NET MVC.}
+        \resumeItem{Implemented REST back-end APIs and WCF-based communication with SQL Server persistence.}
+        \resumeItem{Wrote acceptance tests using SpecFlow and Selenium in C\#.}
+        \resumeItem{Built message-driven processing for card payments using NServiceBus.}
+        \resumeItem{Designed and implemented REST APIs using ASP.NET Core.}
+    \resumeItemListEnd
+
+    \resumeSubheading
+      {Team Lead / .NET Developer -- Eminus Software}{March 2013 -- October 2017}
+      {Bucharest, Romania}{}
+      \resumeItemListStart
+        \resumeItem{Participated in the design and implementation of multi-tenant web applications using ASP.NET Core.}
+        \resumeItem{Implemented a custom ASP.NET identity provider based on an existing SQL Membership database schema using Dapper.}
+        \resumeItem{Participated in the development of a Single Sign-On solution using IdentityServer.}
+        \resumeItem{Designed and implemented an enterprise message aggregator using RabbitMQ and a shared XML schema to integrate heterogeneous systems.}
+        \resumeItem{Ported a server-side HTTP caching library to .NET Core and implemented HTTP caching in ASP.NET Web API.}
+        \resumeItem{Managed deployments across environments and maintained TFS build workflow templates.}
+        \resumeItem{Migrated deployment packaging to WiX installers, significantly reducing build time.}
+        \resumeItem{Managed Redis deployments on CentOS Linux servers.}
+        \resumeItem{Created technical design documentation including UML class diagrams, sequence diagrams and use-case diagrams.}
+        \resumeItem{Helped maintain a consistent C\# coding standard across teams using StyleCop.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+\section {EDUCATION}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Bucharest}{2016 -- 2018}
+      {Master's Degree, Computer Science}{}
+    \resumeSubheading
+      {University of Pitesti}{2009 -- 2012}
+      {Bachelor's Degree, Computer Science}{}
+  \resumeSubHeadingListEnd
+
+\section {CERTIFICATIONS}
+  \resumeSubHeadingListStart
+    \resumePlainHeading{Microsoft -- Exam 486: Developing ASP.NET MVC Web Applications}{Issued September 2014}
+    \resumePlainHeading{Microsoft -- Programming in C\#}{Issued June 2016}
+  \resumeSubHeadingListEnd
+
+\section {SELECTED TECHNOLOGIES}
+\small{
+C\#, .NET, ASP.NET Core, Entity Framework Core, SQL Server, PostgreSQL, TypeScript, Node.js, Vue, Playwright, Puppeteer, Chrome DevTools Protocol, Memlab, OOXML, PPTX processing, Kafka, RabbitMQ, Artemis / AMQP, NServiceBus, Docker, Kubernetes, Helm, Azure DevOps, GitVersion, SonarQube, Testcontainers, OpenTelemetry, Redis, IdentityServer, OAuth2, OpenID Connect.
+}
+
+\end{document}
