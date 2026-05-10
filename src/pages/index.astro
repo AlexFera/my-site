@@ -2,10 +2,30 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const profileLinks = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/alexandru-fera/", icon: "linkedin" },
-  { label: "GitHub", href: "https://github.com/AlexFera", icon: "github" },
-  { label: "Resume", href: "/assets/resume-alexandru-fera.pdf", icon: "file" },
-  { label: "Email", href: "mailto:alexandrufera@gmail.com", icon: "mail" },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/alexandru-fera/",
+    icon: "linkedin",
+    variant: "primary",
+  },
+  {
+    label: "Resume",
+    href: "/assets/resume-alexandru-fera.pdf",
+    icon: "file",
+    variant: "primary",
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/AlexFera",
+    icon: "github",
+    variant: "secondary",
+  },
+  {
+    label: "Email",
+    href: "mailto:alexandrufera@gmail.com",
+    icon: "mail",
+    variant: "secondary",
+  },
 ];
 
 const icons = {
@@ -19,53 +39,70 @@ const icons = {
     '<svg aria-hidden="true" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4.8 6.5h14.4c.72 0 1.3.58 1.3 1.3v8.4c0 .72-.58 1.3-1.3 1.3H4.8c-.72 0-1.3-.58-1.3-1.3V7.8c0-.72.58-1.3 1.3-1.3Z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m4 7.5 8 5.8 8-5.8"/></svg>',
 };
 
+const trustSignals = [
+  {
+    value: "13+ years",
+    label: "senior engineering experience",
+  },
+  {
+    value: "Adobe Express",
+    label: "large-scale product workflows",
+  },
+  {
+    value: ".NET + TypeScript",
+    label: "back-end and platform delivery",
+  },
+  {
+    value: "Kubernetes + CI/CD",
+    label: "services that teams can operate",
+  },
+];
+
 const workAreas = [
   {
     code: "01",
     title: "Document-processing platforms",
-    text: "Presentation import, OOXML/PPTX processing, headless browser runtimes and back-end coordination for product workflows at scale.",
+    text: "Presentation import, OOXML/PPTX processing, headless browser runtimes and back-end service coordination for product workflows at scale.",
   },
   {
     code: "02",
-    title: "Distributed back-end systems",
-    text: "Microservices, asynchronous processing, message-driven workflows, explicit state transitions, retries, duplicate detection and idempotency.",
+    title: "Distributed ingestion and messaging",
+    text: "Microservices, asynchronous workflows, explicit state transitions, retries, duplicate detection, idempotency and downstream integration.",
   },
   {
     code: "03",
-    title: "Delivery and platform engineering",
-    text: "Docker, Kubernetes, Helm-style configuration, Azure DevOps, CI/CD, GitVersion, SonarQube and practical release workflows.",
-  },
-  {
-    code: "04",
-    title: "Diagnostics and engineering tooling",
-    text: "OpenTelemetry-style diagnostics, logs, traces, correlation IDs, health checks, Playwright, CDP and memory-leak investigation workflows.",
+    title: "Diagnostics and delivery",
+    text: "Operational visibility, Playwright/CDP tooling, build pipelines, Kubernetes configuration, static analysis and release workflows.",
   },
 ];
 
 const selectedWork = [
   {
     title: "Adobe Express presentation import",
+    eyebrow: "Product engineering",
     text: "Back-end and platform engineering for presentation-import and document-processing workflows in Adobe Express, a large-scale product used by millions of customers.",
     details: [
       "TypeScript, Node.js and Bazel-based monorepo",
-      "Microsoft PowerPoint / PPTX import, OOXML processing and service coordination",
-      "Kubernetes-based infrastructure, internal platform abstractions and CI/CD",
-      "Puppeteer, headless Chrome, Playwright and Chrome DevTools Protocol",
+      "Microsoft PowerPoint / PPTX import and OOXML processing",
+      "Service coordination, headless Chrome and Puppeteer",
+      "Kubernetes-based platform work and CI/CD workflows",
     ],
   },
   {
     title: "Confidential distributed ingestion platform",
-    text: "Distributed .NET microservices for asynchronous file and report ingestion in a restricted enterprise environment, with metadata persistence, message broker coordination and Kubernetes deployment.",
+    eyebrow: "Enterprise systems",
+    text: "Distributed .NET microservices for asynchronous file and report ingestion in a restricted enterprise environment with message broker coordination and SQL Server persistence.",
     details: [
-      ".NET, C#, SQL Server, background services and worker services",
+      ".NET, C#, SQL Server and background worker services",
       "Artemis / AMQP messaging and downstream integrations",
-      "Idempotency, retries, duplicate detection, traceability and state transitions",
+      "Idempotency, retries, duplicate detection and state transitions",
       "Kubernetes, Helm, Azure DevOps and operational diagnostics",
     ],
   },
   {
     title: "Memory-leak investigation tooling",
-    text: "Developer-facing tooling around Playwright, Chrome DevTools Protocol and Memlab to make memory-leak investigation more repeatable and inspectable.",
+    eyebrow: "Engineering tooling",
+    text: "Developer-facing tooling around Playwright, Chrome DevTools Protocol and Memlab to make browser memory-leak investigation repeatable and inspectable.",
     details: [
       "Automated heap snapshot collection through Playwright and CDP",
       "PostgreSQL persistence for memory-analysis results",
@@ -74,6 +111,7 @@ const selectedWork = [
   },
   {
     title: "Web platforms and document management",
+    eyebrow: "Application delivery",
     text: "ASP.NET Core and Vue applications, SPA migrations, document-management systems and reusable API support for filtering, sorting and pagination.",
     details: [
       "Vue 2/Webpack to Vue 3, TypeScript and Vite migrations",
@@ -88,13 +126,13 @@ const experienceTimeline = [
     role: "Senior Software Engineer",
     company: "Adobe",
     period: "June 2024 - Present",
-    text: "TypeScript, Node.js, Bazel, Adobe Express presentation import, PPTX/OOXML processing, headless Chrome automation, Kubernetes-based platform work and memory-leak investigation tooling.",
+    text: "Adobe Express, TypeScript, Node.js, Bazel, PPTX/OOXML processing, headless Chrome automation, Kubernetes-based platform workflows and memory-leak investigation tooling.",
   },
   {
     role: "Senior .NET Developer",
     company: "RealPage",
     period: "June 2023 - June 2024",
-    text: "Kafka-based streaming, Kubernetes deployment on Amazon EKS, Azure DevOps release pipelines, Testcontainers integration tests and static code analysis.",
+    text: "Kafka-based streaming, Kubernetes deployment on Amazon EKS, Azure DevOps pipelines, Testcontainers integration tests and static code analysis.",
   },
   {
     role: "Senior .NET Developer",
@@ -116,172 +154,250 @@ const experienceTimeline = [
   },
 ];
 
-const technologies = [
-  "C#",
-  ".NET",
-  "ASP.NET Core",
-  "TypeScript",
-  "Node.js",
-  "SQL Server",
-  "PostgreSQL",
-  "Vue",
-  "Playwright",
-  "Puppeteer",
-  "Chrome DevTools Protocol",
-  "Memlab",
-  "OOXML / PPTX",
-  "Kafka",
-  "RabbitMQ",
-  "Artemis / AMQP",
-  "NServiceBus",
-  "Docker",
-  "Kubernetes",
-  "Helm",
-  "Azure DevOps",
-  "Testcontainers",
-  "OpenTelemetry",
-  "IdentityServer",
+const technologyGroups = [
+  {
+    title: "Back-end and data",
+    items: ["C#", ".NET", "ASP.NET Core", "Entity Framework Core", "SQL Server", "PostgreSQL", "Node.js", "TypeScript"],
+  },
+  {
+    title: "Distributed systems",
+    items: ["Kafka", "RabbitMQ", "Artemis / AMQP", "NServiceBus", "Worker services", "Idempotency", "Retries"],
+  },
+  {
+    title: "Delivery and operations",
+    items: ["Docker", "Kubernetes", "Helm", "Azure DevOps", "GitVersion", "SonarQube", "OpenTelemetry"],
+  },
+  {
+    title: "Browser and documents",
+    items: ["OOXML / PPTX", "Playwright", "Puppeteer", "Chrome DevTools Protocol", "Memlab", "Vue"],
+  },
 ];
 ---
 
 <BaseLayout>
   <div class="site-shell">
-  <header class="sticky top-0 z-20 border-b border-slate-200/80 bg-stone-50/90 backdrop-blur">
-    <nav
-      class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-5 sm:px-8"
-      aria-label="Primary navigation"
-    >
-      <a class="text-sm font-semibold tracking-[0.18em] text-slate-950 uppercase" href="#top">
-        Alexandru Fera
-      </a>
-      <div class="hidden items-center gap-7 text-sm text-slate-600 sm:flex">
-        <a class="link-underline hover:text-slate-950" href="#work">Work</a>
-        <a class="link-underline hover:text-slate-950" href="#selected-work">Selected work</a>
-        <a class="link-underline hover:text-slate-950" href="#experience">Experience</a>
-        <a class="link-underline hover:text-slate-950" href="#stack">Stack</a>
-        <a class="link-underline hover:text-slate-950" href="#contact">Contact</a>
-      </div>
-    </nav>
-  </header>
-
-  <main id="top">
-    <section class="hero-surface relative overflow-hidden border-b border-slate-200/80">
-      <div class="mx-auto grid max-w-6xl gap-12 px-5 py-14 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:py-16">
-        <div class="max-w-3xl">
-          <div class="mb-5 flex flex-wrap items-center gap-3 text-sm font-medium tracking-[0.16em] text-slate-500 uppercase">
-            <span>Senior Software Engineer</span>
-            <span class="hidden h-px w-10 bg-slate-300 sm:block"></span>
-            <span>Senior .NET Developer</span>
-          </div>
-          <h1 class="text-4xl font-semibold leading-[1.07] tracking-normal text-slate-950 sm:text-5xl lg:text-5xl">
-            Senior software engineer working on document-processing platforms and distributed back-end systems.
-          </h1>
-          <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-700">
-            I build systems where reliability, traceability and operational visibility matter: Adobe Express presentation-import workflows, enterprise ingestion platforms, message-driven processing, CI/CD and engineering tooling.
-          </p>
-          <div class="mt-7 flex flex-wrap gap-3" aria-label="Profile links">
-            {
-              profileLinks.map((link) => (
-                <a
-                  class="profile-link inline-flex min-h-11 items-center gap-2 border border-slate-300 bg-white/65 px-4 text-sm font-medium text-slate-800 transition hover:border-slate-950 hover:bg-slate-950 hover:text-white"
-                  href={link.href}
-                  target={link.href.startsWith("http") ? "_blank" : undefined}
-                  rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                >
-                  <span class="profile-link-icon" set:html={icons[link.icon]} />
-                  {link.label}
-                </a>
-              ))
-            }
-          </div>
-          <div class="mt-8 grid max-w-2xl grid-cols-2 gap-px overflow-hidden border border-slate-200 bg-slate-200 text-sm text-slate-700 sm:grid-cols-4">
-            <span class="bg-white/70 px-3 py-2 font-medium">.NET</span>
-            <span class="bg-white/70 px-3 py-2 font-medium">TypeScript</span>
-            <span class="bg-white/70 px-3 py-2 font-medium">OOXML / PPTX</span>
-            <span class="bg-white/70 px-3 py-2 font-medium">Kubernetes</span>
-          </div>
+    <header class="sticky top-0 z-20 border-b border-slate-200/80 bg-stone-50/92 backdrop-blur">
+      <nav
+        class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-4 sm:px-8"
+        aria-label="Primary navigation"
+      >
+        <a class="text-sm font-semibold tracking-[0.18em] text-slate-950 uppercase" href="#top">
+          Alexandru Fera
+        </a>
+        <div class="hidden items-center gap-7 text-sm text-slate-600 sm:flex">
+          <a class="link-underline hover:text-slate-950" href="#work">Work</a>
+          <a class="link-underline hover:text-slate-950" href="#selected-work">Selected work</a>
+          <a class="link-underline hover:text-slate-950" href="#experience">Experience</a>
+          <a class="link-underline hover:text-slate-950" href="#stack">Stack</a>
+          <a class="link-underline hover:text-slate-950" href="#contact">Contact</a>
         </div>
+      </nav>
+    </header>
 
-        <div class="grid gap-6 self-end">
-          <figure class="portrait-panel justify-self-start lg:justify-self-end">
-            <picture>
-              <source srcset="/assets/images/portrait.webp" type="image/webp" />
-              <img
-                class="portrait-image"
-                src="/assets/images/portrait.png"
-                alt="Portrait of Alexandru Fera"
-                width="1122"
-                height="1402"
-                loading="eager"
-                decoding="async"
-              />
-            </picture>
-          </figure>
-
-          <aside class="max-w-xl border-l border-slate-300 pl-6 text-sm leading-7 text-slate-600 lg:justify-self-end">
-            <p class="font-medium text-slate-950">Bucharest, Romania</p>
-            <p class="mt-3">
-              13+ years across product engineering, enterprise systems and independent consulting, mostly close to the boundary between application code, databases, message brokers, deployment pipelines and operations.
+    <main id="top">
+      <section class="hero-surface relative overflow-hidden border-b border-slate-200/80">
+        <div class="relative mx-auto grid max-w-6xl gap-9 px-5 py-10 sm:px-8 sm:py-12 lg:grid-cols-[1.04fr_0.86fr] lg:items-center lg:py-16">
+          <div class="hero-copy max-w-3xl">
+            <p class="text-sm font-semibold tracking-[0.2em] text-blue-950/70 uppercase">
+              Senior Software Engineer
             </p>
-            <p class="mt-5">
-              I prefer explicit state, clear boundaries, useful tests, observable services and code that future teams can understand and operate.
+            <h1 class="mt-5 text-5xl font-semibold leading-[0.96] tracking-normal text-slate-950 sm:text-6xl lg:text-7xl">
+              Alexandru Fera
+            </h1>
+            <p class="mt-5 max-w-2xl text-2xl font-semibold leading-tight text-slate-950 sm:text-3xl">
+              Document-processing platforms and distributed back-end systems.
             </p>
-          </aside>
-        </div>
-      </div>
-    </section>
+            <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-700">
+              13+ years building reliable product and enterprise systems across Adobe Express, .NET, TypeScript, SQL databases, messaging, Kubernetes, CI/CD and diagnostics.
+            </p>
 
-    <section id="work" class="section-panel border-b border-slate-200/80 py-20">
-      <div class="mx-auto max-w-6xl px-5 sm:px-8">
-        <div class="max-w-2xl">
-          <p class="text-sm font-medium tracking-[0.2em] text-slate-500 uppercase">What I work on</p>
-          <h2 class="mt-4 text-3xl font-semibold tracking-normal text-slate-950 sm:text-4xl">
-            Systems that need predictable behavior under real operational pressure.
-          </h2>
-        </div>
+            <div class="mt-7 flex flex-wrap gap-3" aria-label="Profile links">
+              {
+                profileLinks.map((link) => (
+                  <a
+                    class:list={[
+                      "profile-link inline-flex min-h-11 items-center gap-2 px-4 text-sm font-medium transition",
+                      link.variant === "primary"
+                        ? "bg-slate-950 text-white hover:bg-slate-700"
+                        : "border border-slate-300 bg-white/70 text-slate-800 hover:border-slate-950 hover:bg-white",
+                    ]}
+                    href={link.href}
+                    target={link.href.startsWith("http") ? "_blank" : undefined}
+                    rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  >
+                    <span class="profile-link-icon" set:html={icons[link.icon]} />
+                    {link.label}
+                  </a>
+                ))
+              }
+            </div>
+          </div>
 
-        <div class="mt-12 grid gap-px overflow-hidden border border-slate-200 bg-slate-200 md:grid-cols-2">
+          <div class="hero-media grid gap-5 self-center">
+            <figure class="portrait-panel justify-self-start lg:justify-self-end">
+              <picture>
+                <source srcset="/assets/images/portrait.webp" type="image/webp" />
+                <img
+                  class="portrait-image"
+                  src="/assets/images/portrait.png"
+                  alt="Portrait of Alexandru Fera"
+                  width="1122"
+                  height="1402"
+                  loading="eager"
+                  decoding="async"
+                />
+              </picture>
+            </figure>
+
+            <aside class="profile-note max-w-xl border-l border-slate-300 pl-5 text-sm leading-7 text-slate-600 lg:justify-self-end">
+              <p class="font-semibold text-slate-950">Bucharest, Romania</p>
+              <p class="mt-3">
+                I work close to the boundary between application code, databases, message brokers, deployment pipelines and operations.
+              </p>
+              <p class="mt-4">
+                I prefer explicit state, clear boundaries, useful tests, observable services and code that future teams can understand and operate.
+              </p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust-strip border-b border-slate-200/80 bg-white/70">
+        <div class="mx-auto grid max-w-6xl border-x border-slate-200 sm:grid-cols-2 lg:grid-cols-4">
           {
-            workAreas.map((area) => (
-              <article class="work-card bg-stone-50 p-6 transition hover:bg-white sm:p-8">
-                <span class="text-sm font-semibold tracking-[0.18em] text-blue-900/70">{area.code}</span>
-                <h3 class="mt-5 text-xl font-semibold text-slate-950">{area.title}</h3>
-                <p class="mt-4 text-base leading-7 text-slate-600">{area.text}</p>
+            trustSignals.map((signal) => (
+              <article class="trust-item border-b border-slate-200 px-5 py-5 sm:px-8 lg:border-b-0">
+                <p class="text-lg font-semibold text-slate-950">{signal.value}</p>
+                <p class="mt-1 text-sm leading-6 text-slate-500">{signal.label}</p>
               </article>
             ))
           }
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="selected-work" class="border-b border-slate-200/80 bg-white/55 py-20">
-      <div class="mx-auto max-w-6xl px-5 sm:px-8">
-        <div class="grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
-          <div>
-            <p class="text-sm font-medium tracking-[0.2em] text-slate-500 uppercase">Selected work</p>
-            <h2 class="mt-4 text-3xl font-semibold tracking-normal text-slate-950 sm:text-4xl">
-              Representative engineering work, with confidential details removed.
-            </h2>
-            <p class="mt-5 text-base leading-7 text-slate-700">
-              The useful signal is the shape of the systems: document conversion, browser-backed runtimes, message-driven processing, deployment workflows and diagnostics.
+      <section id="work" class="section-panel border-b border-slate-200/80 py-18 sm:py-20">
+        <div class="mx-auto max-w-6xl px-5 sm:px-8">
+          <div class="grid gap-8 lg:grid-cols-[0.74fr_1.26fr] lg:items-end">
+            <div>
+              <p class="section-kicker">What I am trusted with</p>
+              <h2 class="mt-4 text-3xl font-semibold tracking-normal text-slate-950 sm:text-4xl">
+                Systems that need predictable behavior under operational pressure.
+              </h2>
+            </div>
+            <p class="max-w-2xl text-base leading-7 text-slate-700 lg:justify-self-end">
+              The common thread is not a single framework. It is reliable processing, traceable state, useful diagnostics and delivery paths that teams can maintain after launch.
             </p>
           </div>
 
-          <div class="space-y-5">
+          <div class="mt-12 grid gap-px overflow-hidden border border-slate-200 bg-slate-200 lg:grid-cols-3">
             {
-              selectedWork.map((item, index) => (
-                <article class="case-note border border-slate-200 bg-white p-6 sm:p-7">
-                  <div class="flex items-start gap-4">
-                    <span class="case-index">{String(index + 1).padStart(2, "0")}</span>
-                    <div>
-                      <h3 class="text-xl font-semibold text-slate-950">{item.title}</h3>
-                      <p class="mt-4 text-base leading-7 text-slate-700">{item.text}</p>
+              workAreas.map((area) => (
+                <article class="work-card bg-stone-50 p-6 transition hover:bg-white sm:p-8">
+                  <span class="text-sm font-semibold tracking-[0.18em] text-blue-900/70">{area.code}</span>
+                  <h3 class="mt-5 text-xl font-semibold text-slate-950">{area.title}</h3>
+                  <p class="mt-4 text-base leading-7 text-slate-600">{area.text}</p>
+                </article>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <section id="selected-work" class="border-b border-slate-200/80 bg-white/55 py-18 sm:py-20">
+        <div class="mx-auto max-w-6xl px-5 sm:px-8">
+          <div class="grid gap-10 lg:grid-cols-[0.66fr_1.34fr]">
+            <div class="section-sticky">
+              <p class="section-kicker">Selected work</p>
+              <h2 class="mt-4 text-3xl font-semibold tracking-normal text-slate-950 sm:text-4xl">
+                Short case notes with the confidential details removed.
+              </h2>
+              <p class="mt-5 text-base leading-7 text-slate-700">
+                These examples show the type of systems I tend to work on: document conversion, browser-backed runtimes, messaging, deployment workflows and diagnostics.
+              </p>
+            </div>
+
+            <div class="space-y-5">
+              {
+                selectedWork.map((item, index) => (
+                  <article class="case-note border border-slate-200 bg-white p-6 sm:p-7">
+                    <div class="grid gap-5 sm:grid-cols-[3.4rem_1fr]">
+                      <div>
+                        <span class="case-index">{String(index + 1).padStart(2, "0")}</span>
+                      </div>
+                      <div>
+                        <p class="text-xs font-semibold tracking-[0.18em] text-blue-950/60 uppercase">{item.eyebrow}</p>
+                        <h3 class="mt-2 text-xl font-semibold text-slate-950">{item.title}</h3>
+                        <p class="mt-4 text-base leading-7 text-slate-700">{item.text}</p>
+                        <ul class="mt-5 grid gap-2 sm:grid-cols-2">
+                          {item.details.map((detail) => (
+                            <li class="detail-chip border border-slate-200 bg-slate-50 px-3 py-2 text-sm leading-6 text-slate-600">
+                              {detail}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
-                  </div>
-                  <ul class="mt-5 flex flex-wrap gap-2">
-                    {item.details.map((detail) => (
-                      <li class="border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm text-slate-600">
-                        {detail}
+                  </article>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="border-b border-slate-200/80 py-18 sm:py-20">
+        <div class="mx-auto grid max-w-6xl gap-12 px-5 sm:px-8 lg:grid-cols-[0.82fr_1.18fr]">
+          <div>
+            <p class="section-kicker">Experience summary</p>
+            <h2 class="mt-4 text-3xl font-semibold tracking-normal text-slate-950 sm:text-4xl">
+              Senior engineering across product, platform and enterprise systems.
+            </h2>
+            <p class="mt-5 text-base leading-7 text-slate-700">
+              The resume has the fuller work history, certifications and technology list. This page keeps the timeline compact.
+            </p>
+          </div>
+
+          <div>
+            <ol class="timeline-list">
+              {
+                experienceTimeline.map((item) => (
+                  <li class="timeline-item border-l border-slate-300 pb-7 pl-5 last:pb-0">
+                    <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+                      <h3 class="text-lg font-semibold text-slate-950">
+                        {item.role} <span class="font-normal text-slate-500">/ {item.company}</span>
+                      </h3>
+                      <p class="text-sm font-medium text-slate-500">{item.period}</p>
+                    </div>
+                    <p class="mt-3 text-base leading-7 text-slate-700">{item.text}</p>
+                  </li>
+                ))
+              }
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section id="stack" class="section-panel border-b border-slate-200/80 py-18 sm:py-20">
+        <div class="mx-auto grid max-w-6xl gap-10 px-5 sm:px-8 lg:grid-cols-[0.72fr_1.28fr]">
+          <div>
+            <p class="section-kicker">Selected stack</p>
+            <h2 class="mt-4 text-3xl font-semibold tracking-normal text-slate-950 sm:text-4xl">
+              Tools grouped by the work they support.
+            </h2>
+            <p class="mt-5 text-base leading-7 text-slate-700">
+              The exact tool changes by system. The steady habits are explicit state, practical tests, observable services and readable implementation.
+            </p>
+          </div>
+
+          <div class="grid gap-px overflow-hidden border border-slate-200 bg-slate-200 sm:grid-cols-2">
+            {
+              technologyGroups.map((group) => (
+                <article class="stack-group bg-white/75 p-5 sm:p-6">
+                  <h3 class="text-base font-semibold text-slate-950">{group.title}</h3>
+                  <ul class="mt-4 flex flex-wrap gap-2">
+                    {group.items.map((item) => (
+                      <li class="stack-chip border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-medium text-slate-700">
+                        {item}
                       </li>
                     ))}
                   </ul>
@@ -290,109 +406,53 @@ const technologies = [
             }
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="experience" class="border-b border-slate-200/80 py-20">
-      <div class="mx-auto grid max-w-6xl gap-12 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr]">
-        <div>
-          <p class="text-sm font-medium tracking-[0.2em] text-slate-500 uppercase">Experience summary</p>
-          <h2 class="mt-4 text-3xl font-semibold tracking-normal text-slate-950 sm:text-4xl">
-            A senior engineering track through product, platform and enterprise systems.
-          </h2>
-        </div>
-
-        <div>
-          <ol class="space-y-6">
-            {
-              experienceTimeline.map((item) => (
-                <li class="timeline-item border-l border-slate-300 pl-5">
-                  <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-                    <h3 class="text-lg font-semibold text-slate-950">
-                      {item.role} <span class="font-normal text-slate-500">/ {item.company}</span>
-                    </h3>
-                    <p class="text-sm font-medium text-slate-500">{item.period}</p>
-                  </div>
-                  <p class="mt-3 text-base leading-7 text-slate-700">{item.text}</p>
-                </li>
-              ))
-            }
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <section id="stack" class="section-panel border-b border-slate-200/80 py-20">
-      <div class="mx-auto grid max-w-6xl gap-10 px-5 sm:px-8 lg:grid-cols-[0.8fr_1.2fr]">
-        <div>
-          <p class="text-sm font-medium tracking-[0.2em] text-slate-500 uppercase">Selected stack</p>
-          <h2 class="mt-4 text-3xl font-semibold tracking-normal text-slate-950 sm:text-4xl">
-            The tools change; the engineering habits stay steady.
-          </h2>
-          <p class="mt-5 text-base leading-7 text-slate-700">
-            I use AI coding agents such as Claude Code and Codex CLI for exploration, refactoring and implementation support, while keeping design decisions, review and delivery under engineering control.
-          </p>
-        </div>
-
-        <div class="self-start">
-          <ul class="flex flex-wrap gap-2">
-            {
-              technologies.map((item) => (
-                <li class="border border-slate-200 bg-white/75 px-3 py-1.5 text-sm font-medium text-slate-700">
-                  {item}
-                </li>
-              ))
-            }
-            </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="py-20">
-      <div class="mx-auto max-w-6xl px-5 sm:px-8">
-        <div class="max-w-3xl">
-          <p class="text-sm font-medium tracking-[0.2em] text-slate-500 uppercase">Contact</p>
-          <h2 class="mt-4 text-3xl font-semibold tracking-normal text-slate-950 sm:text-4xl">
-            Professional contact starts with LinkedIn.
-          </h2>
-          <p class="mt-5 text-lg leading-8 text-slate-700">
-            The best place to reach me professionally is LinkedIn. The resume has the fuller version of the work history, technologies and certifications.
-          </p>
-          <div class="mt-8 flex flex-wrap gap-3">
-            <a
-              class="profile-link inline-flex min-h-11 items-center gap-2 bg-slate-950 px-4 text-sm font-medium text-white transition hover:bg-slate-700"
-              href="https://www.linkedin.com/in/alexandru-fera/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span class="profile-link-icon" set:html={icons.linkedin} />
-              LinkedIn
-            </a>
-            <a
-              class="profile-link inline-flex min-h-11 items-center gap-2 border border-slate-300 bg-white/70 px-4 text-sm font-medium text-slate-800 transition hover:border-slate-950 hover:bg-white"
-              href="mailto:contact@alexandrufera.com"
-            >
-              <span class="profile-link-icon" set:html={icons.mail} />
-              Email
-            </a>
-            <a
-              class="profile-link inline-flex min-h-11 items-center gap-2 border border-slate-300 bg-white/70 px-4 text-sm font-medium text-slate-800 transition hover:border-slate-950 hover:bg-white"
-              href="/assets/resume-alexandru-fera.pdf"
-            >
-              <span class="profile-link-icon" set:html={icons.file} />
-              Resume
-            </a>
+      <section id="contact" class="contact-section py-18 sm:py-20">
+        <div class="mx-auto max-w-6xl px-5 sm:px-8">
+          <div class="max-w-3xl">
+            <p class="section-kicker">Contact</p>
+            <h2 class="mt-4 text-3xl font-semibold tracking-normal text-slate-950 sm:text-4xl">
+              Professional contact starts with LinkedIn.
+            </h2>
+            <p class="mt-5 text-lg leading-8 text-slate-700">
+              LinkedIn is the best place to reach me professionally. The PDF resume has the detailed version of the work history, technologies, education and certifications.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a
+                class="profile-link inline-flex min-h-11 items-center gap-2 bg-slate-950 px-4 text-sm font-medium text-white transition hover:bg-slate-700"
+                href="https://www.linkedin.com/in/alexandru-fera/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="profile-link-icon" set:html={icons.linkedin} />
+                LinkedIn
+              </a>
+              <a
+                class="profile-link inline-flex min-h-11 items-center gap-2 border border-slate-300 bg-white/70 px-4 text-sm font-medium text-slate-800 transition hover:border-slate-950 hover:bg-white"
+                href="/assets/resume-alexandru-fera.pdf"
+              >
+                <span class="profile-link-icon" set:html={icons.file} />
+                Resume
+              </a>
+              <a
+                class="profile-link inline-flex min-h-11 items-center gap-2 border border-slate-300 bg-white/70 px-4 text-sm font-medium text-slate-800 transition hover:border-slate-950 hover:bg-white"
+                href="mailto:alexandrufera@gmail.com"
+              >
+                <span class="profile-link-icon" set:html={icons.mail} />
+                Email
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
 
-  <footer class="border-t border-slate-200/80 py-8">
-    <div class="mx-auto flex max-w-6xl flex-col gap-3 px-5 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:px-8">
-      <p>© {new Date().getFullYear()} Alexandru Fera</p>
-      <p>Senior Software Engineer / Senior .NET Developer</p>
-    </div>
-  </footer>
+    <footer class="border-t border-slate-200/80 py-8">
+      <div class="mx-auto flex max-w-6xl flex-col gap-3 px-5 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+        <p>© {new Date().getFullYear()} Alexandru Fera</p>
+        <p>Senior Software Engineer / Back-end and platform systems</p>
+      </div>
+    </footer>
   </div>
 </BaseLayout>
