@@ -5,7 +5,7 @@ const profileLinks = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/alexandru-fera/", icon: "linkedin" },
   { label: "GitHub", href: "https://github.com/AlexFera", icon: "github" },
   { label: "Resume", href: "/assets/resume-alexandru-fera.pdf", icon: "file" },
-  { label: "Email", href: "mailto:contact@alexandrufera.com", icon: "mail" },
+  { label: "Email", href: "mailto:alexandrufera@gmail.com", icon: "mail" },
 ];
 
 const icons = {
@@ -22,70 +22,125 @@ const icons = {
 const workAreas = [
   {
     code: "01",
-    title: "Distributed back-end systems",
-    text: "Service boundaries, state transitions, message-driven workflows, retries, duplicate detection and clear failure modes.",
+    title: "Document-processing platforms",
+    text: "Presentation import, OOXML/PPTX processing, headless browser runtimes and back-end coordination for product workflows at scale.",
   },
   {
     code: "02",
-    title: "Document and file-processing workflows",
-    text: "Backend coordination for file ingestion, metadata persistence, OOXML/PPTX processing and browser-backed document workflows.",
+    title: "Distributed back-end systems",
+    text: "Microservices, asynchronous processing, message-driven workflows, explicit state transitions, retries, duplicate detection and idempotency.",
   },
   {
     code: "03",
-    title: "Engineering quality and delivery",
-    text: "CI/CD, automated tests, code analysis, versioning, Docker, Kubernetes and practical delivery habits for long-lived systems.",
+    title: "Delivery and platform engineering",
+    text: "Docker, Kubernetes, Helm-style configuration, Azure DevOps, CI/CD, GitVersion, SonarQube and practical release workflows.",
   },
   {
     code: "04",
-    title: "Observability and operations",
-    text: "Health checks, logs, traces, correlation IDs and diagnostics that help teams understand what a system is doing.",
+    title: "Diagnostics and engineering tooling",
+    text: "OpenTelemetry-style diagnostics, logs, traces, correlation IDs, health checks, Playwright, CDP and memory-leak investigation workflows.",
   },
 ];
 
 const selectedWork = [
   {
-    title: "Adobe product engineering",
-    text: "Backend and platform engineering for document-processing and presentation-import workflows at Adobe, involving TypeScript, Node.js, Bazel, Kubernetes-based infrastructure, browser automation and server-side OOXML/PPTX processing.",
+    title: "Adobe Express presentation import",
+    text: "Back-end and platform engineering for presentation-import and document-processing workflows in Adobe Express, a large-scale product used by millions of customers.",
     details: [
-      "Large TypeScript monorepo",
-      "Headless Chrome, Puppeteer, Playwright and Chrome DevTools Protocol",
-      "Architecture, implementation and team delivery",
+      "TypeScript, Node.js and Bazel-based monorepo",
+      "Microsoft PowerPoint / PPTX import, OOXML processing and service coordination",
+      "Kubernetes-based infrastructure, internal platform abstractions and CI/CD",
+      "Puppeteer, headless Chrome, Playwright and Chrome DevTools Protocol",
     ],
   },
   {
-    title: "Restricted enterprise ingestion platform",
-    text: "Distributed .NET microservices for asynchronous file and report ingestion in a restricted enterprise environment.",
+    title: "Confidential distributed ingestion platform",
+    text: "Distributed .NET microservices for asynchronous file and report ingestion in a restricted enterprise environment, with metadata persistence, message broker coordination and Kubernetes deployment.",
     details: [
-      ".NET, C#, SQL Server and background worker services",
-      "Artemis, AMQP and enterprise messaging",
-      "Kubernetes, Helm, CI/CD, idempotent processing, retries and operational diagnostics",
+      ".NET, C#, SQL Server, background services and worker services",
+      "Artemis / AMQP messaging and downstream integrations",
+      "Idempotency, retries, duplicate detection, traceability and state transitions",
+      "Kubernetes, Helm, Azure DevOps and operational diagnostics",
     ],
   },
   {
     title: "Memory-leak investigation tooling",
-    text: "Tooling around Playwright, Chrome DevTools Protocol and memory analysis workflows to make frontend memory-leak investigation more repeatable and easier to inspect.",
+    text: "Developer-facing tooling around Playwright, Chrome DevTools Protocol and Memlab to make memory-leak investigation more repeatable and inspectable.",
     details: [
-      "Browser automation workflows",
-      "Repeatable capture and inspection steps",
-      "Developer-facing diagnostics",
+      "Automated heap snapshot collection through Playwright and CDP",
+      "PostgreSQL persistence for memory-analysis results",
+      "Vue dashboards for leaks and retainer chains",
     ],
   },
   {
-    title: "Delivery and engineering quality",
-    text: "CI/CD pipelines, code analysis, versioning, Docker, Kubernetes and automated testing to make delivery workflows more predictable and easier to diagnose.",
+    title: "Web platforms and document management",
+    text: "ASP.NET Core and Vue applications, SPA migrations, document-management systems and reusable API support for filtering, sorting and pagination.",
     details: [
-      "Azure DevOps and build pipelines",
-      "Testcontainers, Playwright, SpecFlow and Selenium experience",
-      "Practical release and verification workflows",
+      "Vue 2/Webpack to Vue 3, TypeScript and Vite migrations",
+      "Azure Blob Storage, PostgreSQL and Entity Framework Core",
+      "Dynamic LINQ, Playwright E2E tests and maintainable app structure",
     ],
   },
 ];
 
-const earlierExperience = [
-  "Kafka, Kubernetes/EKS, Testcontainers and Azure DevOps pipelines",
-  "ASP.NET Core, Vue 3, TypeScript, PostgreSQL and document-management systems",
-  "ASP.NET MVC/Core, WCF, SQL Server, NServiceBus and automated acceptance tests",
-  "IdentityServer, RabbitMQ, Redis, TFS build workflows, WiX installers and technical design documentation",
+const experienceTimeline = [
+  {
+    role: "Senior Software Engineer",
+    company: "Adobe",
+    period: "June 2024 - Present",
+    text: "TypeScript, Node.js, Bazel, Adobe Express presentation import, PPTX/OOXML processing, headless Chrome automation, Kubernetes-based platform work and memory-leak investigation tooling.",
+  },
+  {
+    role: "Senior .NET Developer",
+    company: "RealPage",
+    period: "June 2023 - June 2024",
+    text: "Kafka-based streaming, Kubernetes deployment on Amazon EKS, Azure DevOps release pipelines, Testcontainers integration tests and static code analysis.",
+  },
+  {
+    role: "Senior .NET Developer",
+    company: "STIONA Software",
+    period: "May 2019 - June 2023",
+    text: "ASP.NET Core and Vue web platforms, document-management systems, Vue 3/TypeScript migrations, Dynamic LINQ APIs and Playwright E2E testing.",
+  },
+  {
+    role: "Senior .NET Developer",
+    company: "Equiniti",
+    period: "November 2017 - May 2019",
+    text: "Finance platform work with ASP.NET MVC, Kendo UI, WCF, SQL Server, SpecFlow, Selenium, NServiceBus and ASP.NET Core APIs.",
+  },
+  {
+    role: "Team Lead / .NET Developer",
+    company: "Eminus Software",
+    period: "March 2013 - October 2017",
+    text: "Multi-tenant ASP.NET systems, IdentityServer SSO, RabbitMQ integrations, Redis operations, TFS build workflows, WiX installers and technical design documentation.",
+  },
+];
+
+const technologies = [
+  "C#",
+  ".NET",
+  "ASP.NET Core",
+  "TypeScript",
+  "Node.js",
+  "SQL Server",
+  "PostgreSQL",
+  "Vue",
+  "Playwright",
+  "Puppeteer",
+  "Chrome DevTools Protocol",
+  "Memlab",
+  "OOXML / PPTX",
+  "Kafka",
+  "RabbitMQ",
+  "Artemis / AMQP",
+  "NServiceBus",
+  "Docker",
+  "Kubernetes",
+  "Helm",
+  "Azure DevOps",
+  "Testcontainers",
+  "OpenTelemetry",
+  "IdentityServer",
 ];
 ---
 
@@ -103,6 +158,7 @@ const earlierExperience = [
         <a class="link-underline hover:text-slate-950" href="#work">Work</a>
         <a class="link-underline hover:text-slate-950" href="#selected-work">Selected work</a>
         <a class="link-underline hover:text-slate-950" href="#experience">Experience</a>
+        <a class="link-underline hover:text-slate-950" href="#stack">Stack</a>
         <a class="link-underline hover:text-slate-950" href="#contact">Contact</a>
       </div>
     </nav>
@@ -118,10 +174,10 @@ const earlierExperience = [
             <span>Senior .NET Developer</span>
           </div>
           <h1 class="text-4xl font-semibold leading-[1.07] tracking-normal text-slate-950 sm:text-5xl lg:text-5xl">
-            Senior software engineer building reliable back-end systems and document-processing workflows.
+            Senior software engineer working on document-processing platforms and distributed back-end systems.
           </h1>
           <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-700">
-            I work across .NET, TypeScript, SQL, messaging, Kubernetes and CI/CD. Most of my work has been in enterprise environments where systems need clear state, reliable processing, useful diagnostics and careful integration with other platforms.
+            I build systems where reliability, traceability and operational visibility matter: Adobe Express presentation-import workflows, enterprise ingestion platforms, message-driven processing, CI/CD and engineering tooling.
           </p>
           <div class="mt-7 flex flex-wrap gap-3" aria-label="Profile links">
             {
@@ -141,7 +197,7 @@ const earlierExperience = [
           <div class="mt-8 grid max-w-2xl grid-cols-2 gap-px overflow-hidden border border-slate-200 bg-slate-200 text-sm text-slate-700 sm:grid-cols-4">
             <span class="bg-white/70 px-3 py-2 font-medium">.NET</span>
             <span class="bg-white/70 px-3 py-2 font-medium">TypeScript</span>
-            <span class="bg-white/70 px-3 py-2 font-medium">Messaging</span>
+            <span class="bg-white/70 px-3 py-2 font-medium">OOXML / PPTX</span>
             <span class="bg-white/70 px-3 py-2 font-medium">Kubernetes</span>
           </div>
         </div>
@@ -165,10 +221,10 @@ const earlierExperience = [
           <aside class="max-w-xl border-l border-slate-300 pl-6 text-sm leading-7 text-slate-600 lg:justify-self-end">
             <p class="font-medium text-slate-950">Bucharest, Romania</p>
             <p class="mt-3">
-              13+ years of software engineering experience across product engineering, enterprise systems and independent consulting.
+              13+ years across product engineering, enterprise systems and independent consulting, mostly close to the boundary between application code, databases, message brokers, deployment pipelines and operations.
             </p>
             <p class="mt-5">
-              I use AI coding agents such as Claude Code and Codex CLI as part of my engineering workflow for exploration, refactoring and implementation support, while keeping design decisions and review under human control.
+              I prefer explicit state, clear boundaries, useful tests, observable services and code that future teams can understand and operate.
             </p>
           </aside>
         </div>
@@ -180,7 +236,7 @@ const earlierExperience = [
         <div class="max-w-2xl">
           <p class="text-sm font-medium tracking-[0.2em] text-slate-500 uppercase">What I work on</p>
           <h2 class="mt-4 text-3xl font-semibold tracking-normal text-slate-950 sm:text-4xl">
-            Systems that need clear behavior under real operational pressure.
+            Systems that need predictable behavior under real operational pressure.
           </h2>
         </div>
 
@@ -204,10 +260,10 @@ const earlierExperience = [
           <div>
             <p class="text-sm font-medium tracking-[0.2em] text-slate-500 uppercase">Selected work</p>
             <h2 class="mt-4 text-3xl font-semibold tracking-normal text-slate-950 sm:text-4xl">
-              Representative work, without exposing sensitive context.
+              Representative engineering work, with confidential details removed.
             </h2>
             <p class="mt-5 text-base leading-7 text-slate-700">
-              These notes describe the technical shape of the work rather than dates, client timelines or internal details.
+              The useful signal is the shape of the systems: document conversion, browser-backed runtimes, message-driven processing, deployment workflows and diagnostics.
             </p>
           </div>
 
@@ -242,23 +298,52 @@ const earlierExperience = [
         <div>
           <p class="text-sm font-medium tracking-[0.2em] text-slate-500 uppercase">Experience summary</p>
           <h2 class="mt-4 text-3xl font-semibold tracking-normal text-slate-950 sm:text-4xl">
-            Product engineering, enterprise integrations and platform work.
+            A senior engineering track through product, platform and enterprise systems.
           </h2>
         </div>
 
-        <div class="text-base leading-8 text-slate-700">
-          <p>
-            I have 13+ years of experience across product engineering and independent consulting. My work has ranged from ASP.NET systems and enterprise integrations to distributed microservices, document-processing workflows, platform tooling and CI/CD.
+        <div>
+          <ol class="space-y-6">
+            {
+              experienceTimeline.map((item) => (
+                <li class="timeline-item border-l border-slate-300 pl-5">
+                  <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+                    <h3 class="text-lg font-semibold text-slate-950">
+                      {item.role} <span class="font-normal text-slate-500">/ {item.company}</span>
+                    </h3>
+                    <p class="text-sm font-medium text-slate-500">{item.period}</p>
+                  </div>
+                  <p class="mt-3 text-base leading-7 text-slate-700">{item.text}</p>
+                </li>
+              ))
+            }
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="stack" class="section-panel border-b border-slate-200/80 py-20">
+      <div class="mx-auto grid max-w-6xl gap-10 px-5 sm:px-8 lg:grid-cols-[0.8fr_1.2fr]">
+        <div>
+          <p class="text-sm font-medium tracking-[0.2em] text-slate-500 uppercase">Selected stack</p>
+          <h2 class="mt-4 text-3xl font-semibold tracking-normal text-slate-950 sm:text-4xl">
+            The tools change; the engineering habits stay steady.
+          </h2>
+          <p class="mt-5 text-base leading-7 text-slate-700">
+            I use AI coding agents such as Claude Code and Codex CLI for exploration, refactoring and implementation support, while keeping design decisions, review and delivery under engineering control.
           </p>
-          <p class="mt-5">
-            I usually work close to the boundary between application code, databases, message brokers, deployment pipelines and operations.
-          </p>
-          <div class="mt-8 border-t border-slate-200 pt-7">
-            <h3 class="text-base font-semibold text-slate-950">Earlier public experience includes work with:</h3>
-            <ul class="mt-4 grid gap-3 text-sm leading-6 text-slate-600 sm:grid-cols-2">
-              {earlierExperience.map((item) => <li class="border-l border-slate-300 pl-4">{item}</li>)}
+        </div>
+
+        <div class="self-start">
+          <ul class="flex flex-wrap gap-2">
+            {
+              technologies.map((item) => (
+                <li class="border border-slate-200 bg-white/75 px-3 py-1.5 text-sm font-medium text-slate-700">
+                  {item}
+                </li>
+              ))
+            }
             </ul>
-          </div>
         </div>
       </div>
     </section>
@@ -271,7 +356,7 @@ const earlierExperience = [
             Professional contact starts with LinkedIn.
           </h2>
           <p class="mt-5 text-lg leading-8 text-slate-700">
-            The best place to reach me professionally is LinkedIn. I keep this site as a public record of the kind of engineering work I do, not as an aggressive freelance landing page.
+            The best place to reach me professionally is LinkedIn. The resume has the fuller version of the work history, technologies and certifications.
           </p>
           <div class="mt-8 flex flex-wrap gap-3">
             <a
@@ -289,6 +374,13 @@ const earlierExperience = [
             >
               <span class="profile-link-icon" set:html={icons.mail} />
               Email
+            </a>
+            <a
+              class="profile-link inline-flex min-h-11 items-center gap-2 border border-slate-300 bg-white/70 px-4 text-sm font-medium text-slate-800 transition hover:border-slate-950 hover:bg-white"
+              href="/assets/resume-alexandru-fera.pdf"
+            >
+              <span class="profile-link-icon" set:html={icons.file} />
+              Resume
             </a>
           </div>
         </div>
