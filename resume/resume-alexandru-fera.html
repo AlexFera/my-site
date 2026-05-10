@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alexandru Fera - Senior Software Engineer</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 18mm 16mm;
+      }
+
+      :root {
+        --ink: #0f172a;
+        --muted: #475569;
+        --line: #cbd5e1;
+        --soft: #f8fafc;
+        --accent: #1e3a8a;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        font-family: Inter, Arial, Helvetica, sans-serif;
+        font-size: 10.6pt;
+        line-height: 1.42;
+        background: white;
+      }
+
+      h1,
+      h2,
+      h3,
+      p,
+      ul {
+        margin: 0;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      header {
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 14px;
+      }
+
+      h1 {
+        font-size: 25pt;
+        line-height: 1;
+        letter-spacing: -0.01em;
+      }
+
+      .headline {
+        margin-top: 8px;
+        color: var(--accent);
+        font-size: 12.5pt;
+        font-weight: 700;
+      }
+
+      .contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 13px;
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 9.7pt;
+      }
+
+      section {
+        break-inside: avoid;
+        margin-top: 18px;
+      }
+
+      h2 {
+        color: var(--accent);
+        font-size: 10.4pt;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+      }
+
+      .summary {
+        margin-top: 8px;
+        color: var(--muted);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px;
+        margin-top: 10px;
+      }
+
+      .box {
+        border: 1px solid var(--line);
+        padding: 10px;
+        background: var(--soft);
+      }
+
+      h3 {
+        font-size: 10.8pt;
+      }
+
+      .box p,
+      .entry p {
+        margin-top: 5px;
+        color: var(--muted);
+      }
+
+      .entry {
+        border-top: 1px solid var(--line);
+        padding-top: 12px;
+        margin-top: 12px;
+      }
+
+      .entry:first-of-type {
+        border-top: 0;
+        padding-top: 0;
+      }
+
+      ul {
+        margin-top: 7px;
+        padding-left: 17px;
+        color: var(--muted);
+      }
+
+      li + li {
+        margin-top: 3px;
+      }
+
+      .stack {
+        margin-top: 6px;
+        color: var(--ink);
+        font-size: 9.5pt;
+        font-weight: 700;
+      }
+
+      .compact-list {
+        columns: 2;
+        column-gap: 24px;
+      }
+
+      .note {
+        margin-top: 7px;
+        color: var(--muted);
+        font-size: 9.8pt;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Alexandru Fera</h1>
+      <p class="headline">Senior software engineer building reliable back-end systems, document-processing workflows and engineering platforms.</p>
+      <div class="contact">
+        <span>Bucharest, Romania</span>
+        <span>alexandrufera.com</span>
+        <span>contact@alexandrufera.com</span>
+        <span>linkedin.com/in/alexandru-fera</span>
+        <span>github.com/AlexFera</span>
+      </div>
+    </header>
+
+    <section>
+      <h2>Profile</h2>
+      <p class="summary">
+        Senior Software Engineer / Senior .NET Developer with 13+ years of experience across product engineering, enterprise systems and independent consulting. I work close to the boundary between application code, databases, message brokers, deployment pipelines and operations. Recent work has focused on distributed back-end systems, document-processing workflows, platform tooling, Kubernetes-based infrastructure and engineering quality.
+      </p>
+      <p class="note">
+        I use AI coding agents such as Claude Code and Codex CLI as part of my engineering workflow for exploration, refactoring and implementation support, while keeping design decisions and review under human control.
+      </p>
+    </section>
+
+    <section>
+      <h2>Engineering Focus</h2>
+      <div class="grid">
+        <div class="box">
+          <h3>Distributed back-end systems</h3>
+          <p>Service boundaries, state transitions, message-driven workflows, retries, duplicate detection and clear failure modes.</p>
+        </div>
+        <div class="box">
+          <h3>Document and file-processing workflows</h3>
+          <p>File ingestion, metadata persistence, OOXML/PPTX processing and backend coordination with browser-backed runtimes.</p>
+        </div>
+        <div class="box">
+          <h3>Engineering quality and delivery</h3>
+          <p>CI/CD, automated testing, versioning, code analysis, Docker, Kubernetes and release workflows that are easier to diagnose.</p>
+        </div>
+        <div class="box">
+          <h3>Observability and operations</h3>
+          <p>Health checks, logs, traces, correlation IDs and diagnostics for systems that need to be operated and understood.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Selected Work</h2>
+      <article class="entry">
+        <h3>Adobe product engineering</h3>
+        <p>
+          Backend and platform engineering for document-processing and presentation-import workflows at Adobe. The work involved backend coordination with a headless application runtime, browser automation, OOXML/PPTX processing and large TypeScript monorepo development.
+        </p>
+        <p class="stack">TypeScript, Node.js, Bazel, Puppeteer, Playwright, Chrome DevTools Protocol, headless Chrome, Kubernetes-based infrastructure, OOXML/PPTX.</p>
+      </article>
+
+      <article class="entry">
+        <h3>Restricted enterprise ingestion platform</h3>
+        <p>
+          Distributed .NET microservices for asynchronous file and report ingestion in a restricted enterprise environment. I worked across architecture, implementation, deployment and collaboration with operations teams.
+        </p>
+        <p class="stack">.NET, C#, SQL Server, Artemis, AMQP, enterprise messaging, Kubernetes, Helm, CI/CD, worker services, state machines, idempotent processing, retries, duplicate detection, observability.</p>
+      </article>
+
+      <article class="entry">
+        <h3>Memory-leak investigation tooling</h3>
+        <p>
+          Tooling around Playwright, Chrome DevTools Protocol and memory analysis workflows to make frontend memory-leak investigation more repeatable and easier to inspect.
+        </p>
+        <p class="stack">Playwright, Chrome DevTools Protocol, browser automation, memory analysis workflows, developer-facing diagnostics.</p>
+      </article>
+
+      <article class="entry">
+        <h3>Delivery and engineering quality</h3>
+        <p>
+          CI/CD pipelines, code analysis, versioning, Docker, Kubernetes and automated testing to make delivery workflows more predictable and easier to diagnose.
+        </p>
+        <p class="stack">Azure DevOps, Docker, Kubernetes, Testcontainers, Playwright, SpecFlow, Selenium, build and release pipelines.</p>
+      </article>
+    </section>
+
+    <section>
+      <h2>Public Experience</h2>
+      <p class="summary">
+        Public experience includes Adobe, RealPage, STIONA Software, Equiniti and Eminus Software. Earlier work covered ASP.NET systems, enterprise integrations, document-management systems, API filtering/sorting/pagination, PostgreSQL, SQL Server, WCF, NServiceBus, RabbitMQ, Redis, IdentityServer, TFS build workflows, WiX installers and technical design documentation.
+      </p>
+    </section>
+
+    <section>
+      <h2>Core Technologies</h2>
+      <ul class="compact-list">
+        <li>.NET, C#, ASP.NET Core, worker services</li>
+        <li>TypeScript, Node.js, Vue, browser automation</li>
+        <li>SQL Server, PostgreSQL, metadata persistence</li>
+        <li>Artemis, AMQP, Kafka, RabbitMQ, NServiceBus</li>
+        <li>Kubernetes, Helm, Docker, CI/CD pipelines</li>
+        <li>Bazel, large TypeScript monorepos</li>
+        <li>Playwright, Puppeteer, Chrome DevTools Protocol</li>
+        <li>Logs, traces, correlation IDs, health checks</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <p class="summary">
+        Computer Science studies at the University of Bucharest and the University of Pitesti.
+      </p>
+    </section>
+  </body>
+</html>

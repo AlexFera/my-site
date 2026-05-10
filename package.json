@@ -2,16 +2,19 @@
   "name": "my-site",
   "version": "1.0.0",
   "description": "My personal website",
-  "main": "sass/my-styles.scss",
+  "type": "module",
+  "packageManager": "pnpm@10.30.1",
   "scripts": {
-    "css-build": "node-sass --omit-source-map-url sass/my-styles.scss dist/my-styles.css",
-    "css-watch": "npm run css-build -- --watch",
-    "start": "npm run css-watch"
+    "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "start": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview"
   },
   "author": "Alexandru Fera",
   "license": "ISC",
   "devDependencies": {
-    "bulma": "^0.9.4",
-    "node-sass": "^8.0.0"
+    "@tailwindcss/vite": "^4.1.17",
+    "astro": "^5.15.0",
+    "tailwindcss": "^4.1.17"
   }
 }
