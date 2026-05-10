@@ -45,7 +45,7 @@ const trustSignals = [
     label: "senior engineering experience",
   },
   {
-    value: "High-scale web systems",
+    value: "Large-scale web systems",
     label: "customer-facing workflows at scale",
   },
   {
@@ -196,7 +196,7 @@ const technologyGroups = [
 
     <main id="top">
       <section class="hero-surface relative overflow-hidden border-b border-slate-200/80">
-        <div class="relative mx-auto grid max-w-6xl gap-9 px-5 py-10 sm:px-8 sm:py-12 lg:grid-cols-[1.04fr_0.86fr] lg:items-center lg:py-16">
+        <div class="relative mx-auto grid max-w-6xl gap-9 px-5 py-10 sm:px-8 sm:py-12 lg:grid-cols-[1.04fr_0.86fr] lg:items-center lg:py-14">
           <div class="hero-copy max-w-3xl">
             <p class="text-sm font-semibold tracking-[0.2em] text-blue-950/70 uppercase">
               Senior Software Engineer
@@ -263,10 +263,10 @@ const technologyGroups = [
       </section>
 
       <section class="trust-strip border-b border-slate-200/80 bg-white/70">
-        <div class="mx-auto grid max-w-6xl border-x border-slate-200 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="mx-auto grid max-w-6xl border-x border-slate-200/70 sm:grid-cols-2 lg:grid-cols-4">
           {
             trustSignals.map((signal) => (
-              <article class="trust-item border-b border-slate-200 px-5 py-5 sm:px-8 lg:border-b-0">
+              <article class="trust-item border-b border-slate-200/70 px-5 py-5 sm:px-8 lg:border-b-0">
                 <p class="text-lg font-semibold text-slate-950">{signal.value}</p>
                 <p class="mt-1 text-sm leading-6 text-slate-500">{signal.label}</p>
               </article>
